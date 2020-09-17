@@ -1,0 +1,112 @@
+//.tooltip {
+
+    .tooltip_content {
+        background-color: $tooltipBG;
+        padding: 0;
+        margin: 0;
+        //border-radius: 4px;
+		.tooltip-box{
+			@include clearfix;
+			 a {
+				 float: right;
+				font-size: 14px;
+				color: $fg;
+				text-decoration: none;
+				outline: none !important;
+				padding:10px 0;
+				display: inline-block;
+				border-left: 1px solid  darken($tooltipBG ,4%);
+				text-align: center;
+				min-width: 51px;
+				min-width: 16vw;
+				i{
+					display: block;
+				}
+				span{
+					font-family: 't-light';
+					display: block;
+					margin-top: 4px;
+				}
+				&.active-state{
+					background: $tooltipH;
+				}
+				&:last-child{
+					border: 0;
+				}
+			}
+		}
+    }
+    .tooltip_point_top,
+    .tooltip_point_bottom {
+        position: relative;
+        background: $tooltipBG;
+        border-radius: 4px;
+    }
+    .tooltip_container_top {
+        position: absolute;
+        box-shadow: 0 2px 2px rgba($bg,.2);
+        z-index: 1000;
+//        left: 5px;
+//        right: 5px;
+        min-width: 125px;
+    }
+    .tooltip_container_bottom {
+        position: absolute;
+        margin-top: 10px;
+        box-shadow: 0 2px 2px rgba($bg,.2);
+        z-index: 1000;
+       // left: 0;
+        min-width: 125px;
+    }
+//}
+.fixtooltip{
+    .tooltip_container{
+        width:100%;
+        z-index: 222222;
+        bottom: 0px;
+    }
+}
+.tooltip_point_top {
+    &:after,
+    &:before {
+       // content: "";
+        @include absolute(top, 100%);
+        pointer-events: none;
+        border: solid transparent;
+        @include square(0);
+    }
+    &:after {
+        border-top-color: $tooltipBG;
+        border-width: 8px;
+        left: 50%;
+        margin-left: -8px;
+    }
+    &:before {
+        border-top-color: $tooltipBG;
+        border-width: 9px;
+        left: 50%;
+        margin-left: -9px;
+    }
+}
+.tooltip_point_bottom {
+    &:after,
+    &:before {
+       // content: "";
+        @include absolute(bottom, 100%);
+        pointer-events: none;
+        border: solid transparent;
+        @include square(0);
+    }
+    &:after {
+        border-bottom-color: $tooltipBG;
+        border-width: 8px;
+        left: 50%;
+        margin-left: -8px;
+    }
+    &:before {
+        border-bottom-color: $tooltipBG;
+        border-width: 9px;
+        left: 50%;
+        margin-left: -9px;
+    }
+}

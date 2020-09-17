@@ -1,0 +1,123 @@
+
+.search_content{
+    padding: 0 15px;
+    ul{
+        background: transparent;
+        &:after ,&:before {
+                background: transparent;
+        }
+        li{
+            background: transparent;
+                h3{
+                    color: $brown;
+                    width: 100%;
+                    margin: 5px 0;
+                    font-size: 16px;
+                }
+           
+            .item-input{
+                padding: 0;
+                input,select{
+                     background: rgba($brown,.2);
+                     padding:0 5px ;
+                     
+                }
+            }
+        }
+    }
+    .result-count{
+        border-bottom: 1px solid $green;
+        color: $green;
+        padding: 9px 0px;
+        margin: 8px 0;
+        margin-bottom: 0;
+    }
+}
+
+.search-result{
+    ul{
+        li{
+            padding-left: 10px;
+             border-bottom: 1px solid rgba($brown,.15);
+              
+            a{
+                
+                    min-height: 48px;
+                    @include makeflex(flex, row, space-between, center);
+                    .info {
+                        padding-top: 3px;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        width: calc(90% - 66px);
+                        color: darken($dark-gold, 10%);
+                        .title {
+                            font-family: "a-Bold";
+                            font-weight: 600;
+                            color: darken($brown, 10%);
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            position: relative;
+                            &:after {
+                                @include linears(left, lighten($toolbar ,15%), transparent, lighten($toolbar ,15%) 20);
+                                background-color: transparent;
+                                @include size(100%, calc(100% + 30px));
+                                @include absolute(top left, -5px);
+                                content: '';
+                                z-index: 0;
+                            }
+                        }
+                        span {
+                            font-size: 12px;
+                            margin: auto 5px;
+                        }
+                    }
+                    .ayaNum {
+                        position: relative;
+                        z-index: 1;
+                        width: 10%;
+                        font-weight: bolder;
+                    }
+                    &.active-state {
+                        background-color: transparent;
+                    }
+            }
+             &:nth-child(odd){
+                background: lighten($toolbar ,10%);
+                    a{
+                .title {
+                    &:after {
+                         @include linears(left, lighten($toolbar ,10%), transparent, lighten($toolbar ,10%) 30);
+                                 background-color : transparent;
+                            }
+                        }
+                    }
+               }
+        }
+    }
+}
+/*
+<div class="list-block   ">
+        <form id="searchform" class="searchForm">
+  
+        
+        <ul>
+        <li> <div class="">البحث عن :</div></li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-input">
+                      < type="search" name="search" class="">
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+                <a href="#" class="search-btn button   button-fill   color-green ">بحث</a>
+            </li>
+        </ul>
+       
+    </form>
+    <div class="search-result"></div>
+    </div>
+*/

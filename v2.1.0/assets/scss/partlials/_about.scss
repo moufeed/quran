@@ -1,0 +1,58 @@
+.about_content{
+    header{
+        width: 100%;
+        text-align: center;
+        img{}
+        h3{}
+    }
+    .info{
+        width: 100%;
+        text-align: center;
+    }
+}
+.resourceList{
+    h3{
+        color: $brown;
+        font-family: t-bold;
+        background: $gold;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+    h4{
+        margin: 0;
+        margin-top: 10px;
+        color: $green;
+        border-bottom: 1px solid $dark-gold;
+        padding-bottom: 10px;
+    }
+    p,a{
+        color: $bg;
+    }
+}
+
+/*
+
+  <header>
+        <img src="img/icon-brown.png" alt="">
+        <h3>عن المرشد</h3>
+      </header>
+      <p>
+      هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط
+      </p>
+    <div class="">
+       <h3>المصادر</h3>
+     <h6>نص القران الكريم</h6> 
+           <a href="http://tanzil.net/" class=" link external">
+                     تم تحميل نص القران الكريم من موقع تنزيل لتصفح القران الكريم 
+          </a> 
+    <h6>الخطوط المستخدمة</h6> 
+         <p>تم استخدم مجموعة من الخطوط المفتوحة المصدر </p>
+         <p class="buttons-row">
+           <a href="https://www.google.com/fonts/specimen/Amiri" class="link button  external"> خط الاميري </a> 
+           <a href="http://fonts.qurancomplex.gov.sa/" class="link button external"> خط النسخ </a> 
+           <a href="http://pakdata.com/products/arabicfont" class="link button external">خط سلام </a> 
+         </p> 
+     </div>
+     
+
+*/

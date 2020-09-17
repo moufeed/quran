@@ -1,0 +1,65 @@
+.content-page{
+     background: lighten($toolbar, 15%);
+    @include linears(60deg, $toolbar, $toolbar, $toolbar-center 25 $toolbar-center 85);
+    .header-contact{
+        text-align: center;
+        h2{
+            color: $brown;
+                    width: 100%;
+        }
+        p{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    #contactForm{
+        .item-input{
+            
+            input,textarea{
+                  background: rgba($dark-gold,.3);
+                     padding:0 5px ;
+            }
+        }
+        .button{
+            border-radius: 0;
+            margin-top: 15px;
+        }
+    }
+}
+
+
+/*
+ <header class="">
+            <h2>شكرا لاهتمامك</h2>
+            <p>الرجاء ملئ الحقول التالية بالبيانات المطلوبة وارسال ملاحظاتك لنا </p>
+        </header>
+        <form id="">
+            <div class="list-block">
+                <ul class="">
+                   <li>
+                          <div class=" input-name">
+                            <input type="text" name="first_name" id="first_name" class="input " placeholder="الاسم الأول">
+                          </div>
+                   </li>
+				   <li>
+                          <div class="item-input input-name">
+                            <input type="text" name="last_name" class="input " placeholder="الكنية">
+                          </div>
+                   </li>
+				   
+                   <li>
+                          <div class="item-input input-email">
+                            <input type="email" name="email" class="input " placeholder="البريد الالكتروني">
+                          </div>
+                   </li>
+                   <li>
+                         <div class="item-input">
+                            <textarea name="message" placeholder="نص الرساله"></textarea>
+                         </div>
+                   </li>
+                   <li>
+                       <a href="#" class="button button-big button-fill show-message">إرسال</a>
+                   </li>
+                </ul>
+            </div>
+        </form>*/

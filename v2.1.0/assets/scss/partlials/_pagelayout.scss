@@ -1,0 +1,142 @@
+@mixin background($folder) {
+    
+
+    .bgleft,.bgright{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        height: 100%;
+        width:20px ;
+        z-index: 55;
+        background-color: $background;
+        background-image: url('#{$base-images}/background/#{$folder}/vertical.svg'), //5
+            url('#{$base-images}/background/#{$folder}/vertical.svg');
+        background-repeat: repeat-y, repeat-y;
+        background-position: top left, //5
+            top right;
+    }
+    .bgleft{
+        left: 0;
+    }
+    .bgright{
+      right: 0;
+    }
+
+    header {
+        background: url('#{$base-images}/background/#{$folder}/shader.svg')0 0 no-repeat;
+        background-size: 100% 100%;
+        min-height: 45px;
+        @include makeflex(flex,
+        row,
+        center,
+        center);
+        h3 {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-size: 1rem;
+            margin-top: 0;
+            font-family: a-regular;
+            width: 100%;
+        }
+    }
+    .soura {
+        .tooltip {
+            small {
+                @include makeflex(inline,
+                row,
+                center,
+                center);
+                background-image: url('#{$base-images}/background/#{$folder}/#{$folder}_left.svg'),
+                url('#{$base-images}/background/#{$folder}/#{$folder}_right.svg');
+                background-repeat: no-repeat;
+                background-position: top left, top right;
+                text-align: center;
+                background-size: 25% 100%;
+                color: $green;
+                padding: 0 6px;
+            }
+        }
+    }
+}
+.q-page,
+.j-page {
+    .page-background {
+        background-color: $page;
+        &.nightVersion {
+            background-color: $bg;
+            color: $fg;
+            .contentblock {
+                background-image: none !important;
+                background-color: $bg !important;
+                header {
+                    h3 {
+                        color: $dark-gold;
+                    }
+                    small {
+                        color: $fg;
+                    }
+                }
+                .highlight {
+                    background-color: darken($brown, 10%);
+                }
+                .highlight2 {
+                    background-color: $brown;
+                }
+            }
+            .soura {
+                .ayat {
+                    .tooltip {
+                        small {
+                            color: $dark-gold;
+                        }
+                    }
+                }
+            }
+        }
+        // @include linears(90deg ,darken($page,3%) , darken($page,3%), $page 20 $page 80 )
+        //padding: 20px;
+        .content-block {
+            padding: 0;
+            margin: 0;
+            .swiper-container {
+                min-height: 81vh;
+            }
+            .contentblock {
+                margin: 5px 25px;
+                background-color: $page;
+                //  min-height : 70%;
+                min-height: 80vh;
+                //  min-height : calc(100vh - 155px);
+                //          @include background(5);
+                .soura {
+                    padding: 0;
+                    .ayat {
+                        margin-top: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.no-navbar,
+    &.no-toolbar {
+        .page-background {
+            .content-block {
+                .contentblock {
+                    //  min-height :calc(100vh - 50px);
+                    .tooltip {
+                        line-height: 6vh;
+                    }
+                }
+            }
+        }
+    }
+}
+$i: 0;
+@for $i from 1 through 7 {
+    .bg-#{$i} {
+        @include background($i);
+        .contentblock {}
+    }
+}

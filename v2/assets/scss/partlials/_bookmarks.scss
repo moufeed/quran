@@ -1,0 +1,50 @@
+//----------------------------------------------------------------------------
+//------------------- bookmarks-page List -----------------------------------
+//----------------------------------------------------------------------------
+.bookmarks-page{
+    .list-block {
+        li{
+            a{
+                .sName{
+                    font-weight: bolder;
+                    color: $brown;
+                }
+                .aNum{
+                    color:darken($dark-gold,8%);
+                    font-family: 't-roman';
+                }
+                .pNum{
+                    color: $bg;
+                }
+                
+                &.swipeout-delete{
+                    i{
+                        position: relative;
+                        top: 3px;
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+<li class="swipeout mark">
+  <div class="swipeout-content">
+    <a href="#" class="item-content item-link" data-index="{{index}}" data-p="{{page}}" data-s="{{sura}}" data-a="{{aya}}">
+      <div class="item-inner">
+        <div class="item-title-row">
+          <div class="item-title ">سورة {{s_name}}</div>
+          <div class="item-after ">  الاية {{aya}}</div>
+        </div>
+        <div class="item-text pNum">{{page}} </div>
+      </div>
+    </a>
+  </div>
+ 
+  <div class="swipeout-actions-right">
+    <a href="#" class="swipeout-delete" data-index="{{index}}">  حذف <i class="fa fa-times" aria-hidden="true"></i></a>
+  </div>
+</li>
+*/

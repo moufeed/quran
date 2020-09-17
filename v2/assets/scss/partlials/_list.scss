@@ -1,0 +1,325 @@
+
+.souarlist,
+.souar-list,
+.juz-List,
+.tfasir_list,
+.bookmarks-page,
+.popup-sound,
+.hizb_list ,
+[data-layout="list"]{
+    background: lighten($toolbar, 15%);
+    @include linears(60deg, $toolbar, $toolbar, $toolbar-center 25 $toolbar-center 85);
+    .list-block {
+        margin-top: 0;
+        padding-bottom: 15px;
+       > ul {
+            &:after {
+                background: transparent;
+            }
+          >  li{
+            border-bottom: 1px solid rgba($brown,.15);
+            &:nth-child(odd){
+            background: lighten($toolbar ,10%);
+           }
+            }
+            .index{
+                width: 40px;
+                min-height: 48px;
+                @include makeflex(flex,row,center,center);
+                background: rgba(saturate(lighten($brown,10%),20%),.05);
+                color: $brown;
+                box-shadow: 3px 0px 4px -2px rgba($bg,.12) inset,-3px 0px 4px -2px rgba($bg,.12) inset;
+            }
+            .name{
+                 padding-right:15px;
+                 font-weight: bolder;
+                 color: $brown;
+             }
+        }
+    }
+    .ripple-wave {
+             background-color: rgba($fg,0.4);
+      }
+}
+
+//----------------------------------------------------------------------------
+//--------------------------   souarlist   -----------------------------------
+//----------------------------------------------------------------------------
+.souarlist ,
+.souar-list,
+.reciter_block{
+    .item-info {
+        width: 85%;
+        min-height: 48px;
+        padding-left: 10px;
+        @include makeflex(flex, row, space-between, center);
+        .name {
+            width: 40%;
+        }
+        .type {
+            width: 30%;
+            text-align: right;
+        }
+        .quantity {
+            text-align: center;
+            width: 30%;
+            strong {
+                font-weight: normal;
+            }
+        }
+        > div {
+            color:darken($dark-gold,4%);
+            font-family: 't-roman';
+        }
+    }
+}
+//----------------------------------------------------------------------------
+//------------------- juz-List  hizb_list  -----------------------------------
+//----------------------------------------------------------------------------
+.juz-List,
+.hizb_list ,
+.tfasir_list,
+.reciter_block,
+[data-layout="list"]{
+    li {
+        a {
+            .name {
+                width: 80%;
+                text-align: right;
+                font-weight: bolder;
+                color: $brown;
+            }
+        }
+    }
+}
+
+.searchpage{
+    .page-content{
+        background-image: none;
+        background-color: $toolbar-center;
+    }
+}
+#sour_list{
+    padding-bottom: 56px;
+}
+
+.recitations_content{
+    li {
+        a {
+            .name {
+                width:60%;
+                text-align: right;
+                font-weight: bolder;
+                color: $brown;
+            }
+            .type{
+                width: 20%;
+                 color:darken($dark-gold,10%);
+            }
+            .count{
+                width: 12%;
+                text-align: center;
+                small{
+                    font-size: 12px ;
+                    display: block;
+                   }
+                b{}
+            }
+        }
+    }
+}
+.reciter_block{
+    li{
+        .item-info{
+            .name{}
+            .quantity{}
+            .buttons-row{
+                .button{
+                    min-width: 40px;
+                    color: lighten($brown,20%);
+                    &.pause{
+                            i{
+                                &:before{
+                                    content:'\f04d'
+                                }
+                            }
+                        }
+                    &.downloaded{
+                        pointer-events: none;
+                        // opacity:.55;
+                             i{
+                                &:before{
+                                    content:'\f00c'
+                                }
+                            }
+                       }
+                }
+            }
+        }
+    }
+}
+
+.smart-select-page{
+     background: lighten($toolbar, 15%);
+ @include linears(60deg, $toolbar, $toolbar, $toolbar-center 25 $toolbar-center 85);
+    .list-block{
+         margin-top: 0;
+        padding-bottom: 15px;
+        ul{
+         &:after {
+                background: transparent;
+            }
+            li{
+                   border-bottom: 1px solid rgba($brown,.15);
+                    &:nth-child(odd){
+                    background: lighten($toolbar ,10%);
+                   }
+                &.hafs,&.noorehira,&.noorehuda, &.saleem,&.a-Regular{
+                    .item-title{
+                         width: 100%;
+                         font-size: 20px;
+                        color: $brown;
+                        &:after{
+                            @include absolute(top left, 0 0);
+                               font-size: 17px;
+                              color: #635A50;
+                        }
+                    }
+                }
+                &.hafs{
+                    .item-title{
+                        font-family:"hafs";
+                        &:after{
+                            content: 'حفص';
+                        }
+                    }
+                }
+                &.noorehira{
+                    .item-title{
+                        font-family:'noorehira';
+                        &:after{
+                            content: 'نور حراء';
+                        }
+                    }
+                }
+                &.noorehuda{
+                    .item-title{
+
+                        font-family:'noorehuda';
+                        &:after{
+                            content: 'نور الهدى';
+                        }
+                    }
+                }
+                &.saleem{
+                    .item-title{
+                        font-family:'saleem';
+                        &:after{
+                            content: 'سليم';
+                        }
+                    }
+                }
+                &.a-Regular{
+                    .item-title{
+                        font-family:'a-Regular';
+                         &:after{
+                            content: 'الاميري';
+                        }
+                    }
+                }
+                &.b1,&.b2,&.b3,&.b4,&.b5,&.b6,&.b7{
+
+                    .item-inner{
+                        margin-left: 16px;
+                        background-position: left center;
+                        background-repeat: repeat-x;
+                        .item-title{
+                        color: rgba(0,0,0,0);
+                        font-size: 0;
+                        line-height: 0;
+                      }
+                    }
+                }
+                &.b1{
+                    .item-inner{
+                        background-image: url('#{$base-images}/background/1/horizontal.svg');
+                    }
+                }
+                &.b2{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/2/horizontal.svg');
+                    }
+                }
+                &.b3{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/3/horizontal.svg');
+                    }
+                }
+                &.b4{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/4/horizontal.svg');
+                    }
+                }
+                &.b5{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/5/horizontal.svg');
+                    }
+                }
+                &.b6{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/6/horizontal.svg');
+                    }
+                }
+                &.b7{
+                    .item-inner{
+                         background-image: url('#{$base-images}/background/7/horizontal.svg');
+                    }
+                }
+            }
+        }
+    }
+}
+
+.management_content{
+    ul{
+        li{
+            a{
+                .index{}
+                .name{
+                    small{
+                        color: #000;
+                        margin: auto 4px;
+                    }
+                }
+                .count{
+                    width: 30%;
+                    text-align: center;
+                    small{
+                        font-size: 12px ;
+                        display: block;
+                    }
+                    b{}
+                }
+            }
+         }
+    }
+}
+.popup-sound{
+    ul{
+        li{
+            .index{}
+            .name{
+                width: 80%;
+                text-align: right;
+                font-weight: bolder;
+                color: #734825;
+            }
+            .delete{
+
+                .folder-delete{
+                    color: #BF1515;
+                }
+            }
+        }
+    }
+}

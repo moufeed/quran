@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-music-controls": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.das360.morshed"
+        }
+    }
+}

@@ -1,0 +1,305 @@
+@mixin background($folder) {
+    
+
+    .bgleft,.bgright{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        height: 100%;
+        width:20px ;
+        z-index: 55;
+        background-color: $background;
+        background-image: url('#{$base-images}/background/#{$folder}/vertical.svg');
+        background-repeat: repeat-y;
+        background-position: top left;
+    }
+    .bgleft{
+        left: 0;
+    }
+    .bgright{
+      right: 0;
+    }
+	.bgtop,.bgbottom{
+		position: fixed;
+        right:0;
+        left:0;
+		z-index: 55;
+		background-color: $background;
+		width: 100%;
+        height:20px ;
+		 background-image: url('#{$base-images}/background/#{$folder}/horizontal.svg');
+	}
+	.bgtop{
+		top: 56px;
+	}
+	.bgbottom{
+		bottom: 48px;
+	}
+
+
+    header {
+        background: url('#{$base-images}/background/#{$folder}/shader.svg')0 0 no-repeat;
+        background-size: 100% 100%;
+        min-height: 45px;
+        @include makeflex(flex,row, center,center);
+        h3 {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            font-size: 1rem;
+            margin-top: 0;
+            font-family: a-regular;
+            width: 100%;
+        }
+    }
+    .soura {
+        .tooltip {
+            small {
+                @include makeflex(inline,row,center,center);
+                background-image: url('#{$base-images}/background/#{$folder}/#{$folder}_left.svg'),
+                url('#{$base-images}/background/#{$folder}/#{$folder}_right.svg');
+                background-repeat: no-repeat;
+                background-position: top left, top right;
+                text-align: center;
+                background-size: 25% 100%;
+                color: $green;
+                padding: 0 6px;
+            }
+        }
+    }
+}
+
+.toolbar-gold .tab-link
+{
+    color: $brown !important;
+}
+.nightVersion {
+    color: $night-color2;
+    background: $nightground;
+
+    .popover {
+        background: #424242;
+    }
+     .modal-button {
+        color: $night-color;
+    }
+    .modal {
+        color: $night-color2; 
+        background: $nightground ;
+    }
+    .basmalah
+    {
+        color: $night-color;
+    }
+    .ayaBox{
+        color: $night-color;
+    }
+    .list-block .item-text
+    {
+        color: $night-color2;
+    }
+    .picker-modal{
+        background-color: $night;
+    }
+    .setting_content ul li .item-after
+    {
+        color: $night-color;
+    }
+    .setting_content ul li .item-title {
+        color: $night-color2;
+    }
+    .list-block>ul .name {
+        color: $night-color2;
+    }
+    .list-block>ul .index {
+        color: $night-color2;
+    }
+    .list-block input {
+        color: $night-color2;
+    }
+    .list-block ul li .item-title {
+        color: $night-color2 !important;
+    }
+    .list-block ul li .item-title:after {
+        color: $night-color2 !important;
+    }
+    .helpPage_content .list-block ul li a .item-title {
+        color: $night-color2;
+    }
+    .content-page .header-contact h2 {
+        color: $night-color2;
+    }
+    .theme-app .button:not(.button-fill) {
+        color: $night-color2 !important;
+    }
+    .bookmarks-page .list-block li a .sName {
+        color: $night-color2;
+    }
+    // search meanings
+    .searchMeanings_content .result-count {
+        color: $night-color;
+    }
+    .searchMeanings-result ul li a .info .title {
+        color: $night-color2;
+    }
+    .searchMeanings-result ul li,
+    {
+        background: $nightground !important;
+    }
+    .searchMeanings-result ul li:nth-child(odd),
+    .list-block>ul>li:nth-child(odd) {
+        background: $nightodd !important;
+    }
+    .searchMeanings-result ul li a .info .title {
+        &:after {
+            background-image: none !important;
+        }
+    }
+    // search meanings end
+    .search_content .result-count {
+        color: $night-color;
+    }
+    .search-result ul li a .info .title {
+        color: $night-color2;
+    }
+    .helpPage_content .list-block ul li:nth-child(odd) {
+        background: $nightground !important;
+    }
+    .list-block ul li,
+    .search-result ul li,
+    {
+        background: $nightground !important;
+    }
+    .search-result ul li:nth-child(odd),
+    .list-block>ul>li:nth-child(odd) {
+        background: $nightodd !important;
+    }
+    .page-background,
+    .page {
+        background: $nightground;
+    }
+    .tfasir_list {
+        background: $nightground;
+    }
+     .list-block ul li a .info .title:after
+     {
+            background-image: none !important; 
+     }
+    .search-result ul li a .info .title {
+        &:after {
+            background-image: none !important;
+        }
+    }
+    .page {
+        .tabs {
+            .aya_tafsir,
+            .tfasir_list {
+                background: mix($fg, $nightground);
+                .content-block {
+                    &.ayaText {
+                        background: $nightground;
+                        border-bottom: 1px solid darken($nightground, 15%);
+                    }
+                }
+            }
+        }
+    }
+     
+        .bgleft,
+        .bgright,
+        .bgbottom,
+        .bgtop {
+            background-color: $night !important;
+        }
+    
+    .navbar,
+    .toolbar {
+        background: $night !important;
+    }
+    .page-background .swiper-container {
+        background-color: $night !important;
+        color: $fg;
+        .contentblock {
+            background-image: none !important;
+            background-color: $night !important;
+            header {
+                h3 {
+                    color: $dark-gold;
+                }
+                small {
+                    color: $fg;
+                }
+            }
+            .highlight {
+                background-color: darken($brown, 10%);
+            }
+            .highlight2 {
+                background-color: $brown;
+            }
+            .has_words {
+                background-color: #093e17;
+            }
+        }
+        .soura {
+            .ayat {
+                .tooltip {
+                    small {
+                        color: $dark-gold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.q-page,
+.j-page {
+    .page-background {
+        background-color: $page;
+
+        // @include linears(90deg ,darken($page,3%) , darken($page,3%), $page 20 $page 80 )
+        //padding: 20px;
+        .content-block {
+            padding: 0;
+            margin: 0;
+            .swiper-container {
+                min-height:75vh;
+            }
+            .contentblock {
+                margin:25px;
+                background-color: $page;
+                //  min-height : 70%;
+                min-height: 80vh;
+                //  min-height : calc(100vh - 155px);
+                //          @include background(5);
+                .soura {
+                    padding: 0;
+                    .ayat {
+                        margin-top: 0;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    &.no-navbar,
+    &.no-toolbar {
+        .page-background {
+            .content-block {
+                .contentblock {
+                    //  min-height :calc(100vh - 50px);
+                    .tooltip {
+                        line-height: 6vh;
+                    }
+                }
+            }
+        }
+    }
+}
+$i: 0;
+@for $i from 1 through 7 {
+    .bg-#{$i} {
+        @include background($i);
+        .contentblock {}
+    }
+}

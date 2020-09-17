@@ -1,0 +1,66 @@
+.panel{
+    //      @include linears(0deg ,darken($panel,8%) , darken($panel,8%), $panel 50 );
+    color: $fg;
+    .page{
+       // @include linears(60deg ,lighten($panel,4%) , lighten($panel,4%), $panel 50 );
+	//	background: $panel-background  url('#{$base-images}/bgpanel.svg') 50% 140%/125% auto no-repeat;
+background: $panel-background ;
+    }
+
+    .toolbar{
+        //border-top: 1px solid  lighten($panelToolbar,5%);
+        background: $sidebarToolbar;
+        .button{
+            &:not(.button-fill){
+                color:  $fg;
+            }
+        }
+        .font-preview{
+            color: $fg;
+            &.disabled{
+                color: darken($fg,35%);
+            }
+            .reset{
+                color:  $gold;
+            }
+        }
+        .ripple-wave {
+            background-color: rgba($fg,0.5);
+        }
+    }
+    .header-panel{
+       // background: darken($panel,6%)  url('#{$base-images}/panel-header.png')0 0 repeat-X;
+        img{
+          //  @include drop-shadow(0 0 8px $bg);
+        }
+        &:after{
+        //    @include linears(90deg ,darken($light-gold,14%) , $light-gold  );
+        }
+    }
+    .ripple-wave {
+        background-color: rgba($fg,0.5);
+    }
+    .panel-list{
+        ul{
+           // background: rgba($fg,.1);
+            li{
+                a.item-content{
+					&.gold-bg{
+						background: $activePanelList;
+						opacity: 1;
+						color: $bg;
+						.item-inner{
+							background-image:none;
+						}
+					}
+                    .item-media{
+                        i{
+                           // color:$light-gold ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

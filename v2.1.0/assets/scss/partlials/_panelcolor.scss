@@ -1,0 +1,56 @@
+.panel{
+    //      @include linears(0deg ,darken($panel,8%) , darken($panel,8%), $panel 50 );
+    color: $gold;
+    .page{
+        @include linears(60deg ,lighten($panel,4%) , lighten($panel,4%), $panel 50 );
+    }
+    .toolbar{
+        border-top: 1px solid  lighten($panelToolbar,5%);
+        background: $panelToolbar;
+        .button{
+            &:not(.button-fill){
+                color:  $fg;
+            }
+        }
+        .font-preview{
+            color: $fg;
+            &.disabled{
+                color: $gold;
+            }
+            .reset{
+                color: darken($green,5%);
+            }
+        }
+        .ripple-wave {
+            background-color: rgba($fg,0.5);
+        }
+    }
+    .header-panel{
+        background: darken($panel,6%)  url('#{$base-images}/panel-header.png')0 0 repeat-X;
+        img{
+            @include drop-shadow(0 0 8px $bg);
+        }
+        &:after{
+            @include linears(90deg ,darken($light-gold,14%) , $light-gold  );
+        }
+    }
+    .ripple-wave {
+        background-color: rgba($fg,0.5);
+    }
+    .panel-list{
+        ul{
+            background: rgba($fg,.1);
+            li{
+                a.item-content{
+                    .item-media{
+                        i{
+                            color:$light-gold ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+*/

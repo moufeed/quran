@@ -1,0 +1,68 @@
+
+<li>
+    <a href="#" class="item-link item-content  management-link">
+        <div class="item-media">
+            <i class="fa fa-volume-up" aria-hidden="true"></i>
+        </div>
+        <div class="item-inner">
+            <div class="item-title">إدارة الصوتيات</div>
+            <div class="item-after"></div>
+        </div>
+    </a>
+</li>
+
+
+<script id="soundsTemplate" type="text/template7">
+<li class="swipeout">
+<div class="swipeout-content">
+<a class=" item-content recitefolder" data-id="{{id}}" data-index="{{index}}" data-n="{{name}}">
+<span class="index">{{id}} </span>
+<span class="name">{{arname}}   {{#if type}} <small>{{js "typetext(this.type)"}}</small> {{/if}} </span>
+<span class="count"><small>السور المحملة</small> <b><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i></b> {{scount}}</span>
+</a>
+</div>
+<div class="swipeout-actions-right">
+<a href="#" class="swipeout-delete removerecit" data-recite="{{index}}" ><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+</div>
+</li>
+</script>
+
+<script type="text/template7" id="popupSound">
+<div class="popup popup-sound tablet-fullscreen">
+<div class="view tooltipup-view">
+<div class="pages navbar-fixed ">
+<div  class="page ">
+<div class="navbar">
+<div class="navbar-inner navbar-items">
+<div class="left"></div>
+<div class="center sliding">
+{{reciter_name}}
+</div>
+<div class="right">
+<a href="#" class="close-popup link icon-only">
+<i class="fa fa-arrow-left"></i>
+</a>
+</div>
+</div>
+</div>
+<div id="" class="page-content">
+<div class="list-block recitblock" data-r="{{reciter}}"  >
+<ul class="reciter_block"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</script>
+
+
+<script id="s_sura_Template" type="text/template7">
+<li class="suraitem"  data-s="{{index}}" data-r="{{reciter}}" data-folder={{folder}}>
+<div class="swipeout-content item-content">
+<span class="index">{{idCount}} </span>
+<span class="name">سورة {{name}}</span>
+<span class="delete"><a href="#" class="folder-delete button"><i class="fa fa-trash-o" aria-hidden="true"></i></a></span>
+</div>
+</li>
+</script>

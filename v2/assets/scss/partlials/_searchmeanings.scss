@@ -1,0 +1,139 @@
+
+
+
+.searchMeaningsbarform{
+	position: fixed;
+	 //@include linears(70deg ,$toolbar , $toolbar ,  $toolbar-center 30 $toolbar-center 70 );
+	background: $panel-background;
+    box-shadow: 0 0 1px 0px $brown;
+	z-index: 10;
+	form{
+		width: 100%;
+		@include makeflex(flex,row,space-between,center);
+		input{
+			 color: darken($fg,15%);
+			@include placeholder{
+				   color: darken($fg,15%);
+			}
+			background: lighten($panel-background ,7%) ;
+			padding:0 5px ;
+		}
+		.searchMeanings-btn{
+		   //color: darken($brown,15%);
+			border-radius:0;
+			background: #565656;
+			&.active-state{
+				background:lighten($panel-background ,7%)  ;
+			}
+		}
+		select{
+			color: darken($fg,15%);
+			background:lighten($panel-background ,7%)  ;
+			padding:0 5px ;
+			margin: 0 3px;
+		}
+	}
+
+
+}
+
+.searchMeanings_content{
+    padding: 0 ;
+	padding-top: 50px;
+    ul{
+        background: transparent;
+        &:after ,&:before {
+                background: transparent;
+        }
+        li{
+            background: transparent;
+                h3{
+                    color: $brown;
+                    width: 100%;
+                    margin: 5px 0;
+                    font-size: 16px;
+                }
+           
+            .item-input{
+                padding: 0;
+                input,select{
+                     background: rgba($brown,.2);
+                     padding:0 5px ;
+                     
+                }
+            }
+        }
+    }
+    .result-count{
+        border-bottom: 1px solid $green;
+        color: $green;
+        padding: 9px 15px;
+        margin: 8px 0;
+        margin-bottom: 0;
+    }
+}
+
+.searchMeanings-result{
+    ul{
+        li{
+            padding-left: 10px;
+             border-bottom: 1px solid rgba($brown,.15);
+              
+            a{
+                
+                    min-height: 48px;
+                    @include makeflex(flex, row, space-between, center);
+					padding-left: 10px;
+                    .info {
+                        padding-top: 3px;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        //width: calc(90% - 66px);
+                        width:100%;
+                        color: darken($dark-gold, 10%);
+                        .title {
+                            font-family: "a-Bold";
+                            font-weight: 600;
+                            color: darken($brown, 10%);
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            position: relative;
+                            &:after {
+                                //@include linears(left, lighten($toolbar ,15%), transparent, lighten($toolbar ,15%) 20);
+                                background-color: transparent;
+                                @include size(100%, calc(100% + 30px));
+                                @include absolute(top left, -5px);
+                                content: '';
+                                z-index: 0;
+                            }
+                        }
+                        span {
+                            font-size: 12px;
+                            margin: auto 5px;
+                        }
+                    }
+                    .ayaNum {
+                        position: relative;
+                        z-index: 1;
+                        width: 10%;
+                        font-weight: bolder;
+                    }
+                    &.active-state {
+                        background-color: transparent;
+                    }
+            }
+             &:nth-child(odd){
+                background: lighten($toolbar ,10%);
+                    a{
+                .title {
+                    &:after {
+                         //@include linears(left, lighten($toolbar ,10%), transparent, lighten($toolbar ,10%) 30);
+                                 background-color : transparent;
+                            }
+                        }
+                    }
+               }
+        }
+    }
+}

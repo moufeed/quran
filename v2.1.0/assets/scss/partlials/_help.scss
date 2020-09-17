@@ -1,0 +1,96 @@
+.helpPage_content{
+    padding: 0;
+    .list-block{
+         margin-top: 0;
+        padding-bottom: 15px;
+         ul {
+            &:after , &:before {
+                background: transparent;
+            }
+             li{
+            border-bottom: 1px solid rgba($brown,.15);
+                &:nth-child(odd){
+                    background: lighten($toolbar ,10%);
+               }
+                 a{
+                     .item-title{
+                         color: #332010;
+                     }
+                     .item-inner{
+                         background-image: url('#{$base-images}/plus.png');
+                         background-size: 20px
+                     }
+                 }
+                 &.accordion-item-expanded{
+                      a.item-link{
+                     .item-inner{
+                         background-image: url('#{$base-images}/minus.png');
+                         background-size: 20px
+                      }
+                   } 
+                 }
+                 .accordion-item-content{
+                     padding: 0 15px  ;
+                     text-align: center;
+                     
+                     p{
+                         margin: 0;
+                         margin-bottom: 15px;
+                     }
+                 }
+           }
+        }
+    }
+}
+
+
+
+/*
+<div class="content-block     ">
+ <div class="information">
+        <div class="">
+        <ul class="questionslist">
+   <li class="accordion-item">
+   <a href="#" class="item-content item-link">
+        <div class="item-inner">
+          <div class="">كيف أحصل على تفسير</div>
+        </div></a>
+      <div class="accordion-item-content">
+          <p>هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان</p>
+      </div>
+    </li>
+ 
+   <li class="accordion-item">
+   <a href="#" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">كيف يمكنني تكبير الخط ؟</div>
+        </div></a>
+      <div class="accordion-item-content">
+          <p>هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان</p>
+      </div>
+    </li>
+ 
+   <li class="accordion-item">
+   <a href="#" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">طريقة حفظ علامة مرجعية</div>
+        </div></a>
+      <div class="accordion-item-content">
+          <p>هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان</p>
+      </div>
+    </li>
+ 
+   <li class="accordion-item">
+   <a href="#" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">ما طريقة البحث في  القران ؟</div>
+        </div></a>
+      <div class="accordion-item-content">
+          <p>هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان</p>
+      </div>
+    </li>
+ </ul>
+        </div>
+ </div>  
+ </div>
+*/

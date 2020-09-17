@@ -1,0 +1,32 @@
+.hidden{
+    display: none;
+}
+.sound-player{
+    background-color:$green ; 
+    min-height: 75px;
+    position: absolute;
+    z-index: 10000;
+    .progressbar{
+        
+        background:rgba(darken($green,5%),.6);
+        span{
+            background: mix($brown,$yellow,67%);
+        }
+    }
+    .suraName{
+        margin: 10px 15px 0 15px;
+        display: inline-block;
+    }
+    .backToPage{
+        float: left;
+    }
+    .toolbar-inner{
+        
+        top:  32px;
+        height: 52%;
+        height: calc(100% - 32px);
+        .link{
+            min-width: 75px;
+        }
+    }
+}

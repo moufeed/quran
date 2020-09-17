@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="Content-Security-Policy" content="  style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>almorshed</title>
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <link rel="stylesheet" href="css/framework7.material.rtl.min.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--        <link rel="stylesheet" href="css/animate.min.css">-->
+</head>
+<body class="theme theme-app" onload="onLoad()">
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="searchbar-overlay"></div>
+    <div class="panel panel-right panel-reveal">
+        <div data-page="panel" class="page toolbar-fixed navbar-fixed">
+            <div class="toolbar toolbar-bottom tabbar">
+                <div class="toolbar-inner">
+                   
+                    <a href="#" class="button button-big font-control-btn increase" data-op="larger">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    
+                    <a href="#" class="font-preview  button button-big disabled"> حَجْمٌ الْخَطّ </a>
+                    <a href="#" class="button button-big font-control-btn decrease" data-op="smaller">
+                        <i class="fa fa-minus"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="page-content">
+                <header class="header-panel">
+                    <img src="img/logo-panel.png" alt="">
+                </header>
+                <div class="media-bar">
+                </div>
+                <div class="list-block panel-list">
+                    <ul class="">
+                        <li>
+                            <a href="#" class="item-link item-content close-panel index-link">
+                                <div class="item-media"><i class="fa fa-list-ol" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">فهرس السور</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="searchPage-link item-link item-content close-panel ">
+                                <div class="item-media"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">بحث</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link item-content close-panel recitations-link">
+                                <div class="item-media"><i class="fa fa-microphone" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">التلاوات</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link item-content close-panel tafsirlist-link">
+                                <div class="item-media"><i class="fa fa-book" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">التفاسير</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="item-link item-content close-panel setting-link">
+                                <div class="item-media"><i class="fa fa-cogs" aria-hidden="true"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">الاعدادات</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="index" class="page with-subnavbar">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="left">
+                                <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a>
+                                <a href="#" class="link icon-only open-bookmark"><i class="fa fa-bookmark"></i></a>
+                                <!--                                <a href="#" class="link icon-only open-search" data-target="#searchbar"><i class="fa fa-search"></i></a>-->
+                            </div>
+                            <div class="center">
+                                <div class="  " id="searchbar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="toolbar tabbar toolbar-gold">
+                            <div class="toolbar-inner">
+                                <a href="#souarlist" class="tab-link active"> السُّوَرٌ</a>
+                                <a href="#juztab" class="tab-link"> الأَجزاءْ</a>
+                                <a href="#hizbtab" class="tab-link"> الأحْزابُ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toolbar toolbar-bottom search-bar">
+                        <div class="toolbar-inner searchbarbox">
+                            <form class="searchbar searchbar-init">
+                                <div class="searchbar-input">
+                                    <input type="search" placeholder="بحث بأسماء السور ">
+                                    <a href="#" class="searchbar-clear"></a>
+                                </div><a href="#" class="searchbar-cancel">إلغاء</a>
+                            </form>
+                        </div>
+                    </div>
+                    <!--  navbar -->
+                    <div class="tabs-swipeable-wrap ">
+                        <div class="tabs">
+                            <div id="souarlist" class="page-content tab active souarlist">
+                                <div class="content-block searchbar-not-found ">
+                                    <span class="notFound ">
+                                لا يوجد نتيجة مطابقة للبحث
+                                </span>
+                                </div>
+                                <div class="list-block virtual-list" id="sour_list"></div>
+                            </div>
+                            <div id="juztab" class="page-content tab  juz-List">
+                                <div class="list-block virtual-list" id="juzList"></div>
+                            </div>
+                            <div id="hizbtab" class="page-content tab   hizb_list">
+                                <div class="list-block virtual-list" id="Hizblist"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  data-page="index" -->
+            </div>
+            <!--  pages-main -->
+        </div>
+        <!--  view-main -->
+    </div>
+    
+    <script type="text/template7" id="listItems">
+        <li>
+            <a href="#{{index}}" class="item-link item-content" data-index="{{index}}" data-s="{{sora}}" data-a="{{aya}}" data-p="{{page}}">
+                <span class="index">{{js "this.index + 1"}}</span>
+                <span class="name"> {{#if type}} الجزء {{else}} الحزب{{/if}} {{arNum this.index}} </span>
+            </a>
+        </li>
+    </script>
+    <script type="text/template7" id="h_picker">
+        <div class="picker-modal  hizb-picker">
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <div class="left"></div>
+                    <div class="center"></div>
+                    <div class="right"><a href="#" class="button button-big close-picker">إغلاق</a></div>
+                </div>
+            </div>
+            <div class="picker-modal-inner">
+                <div class="list-block">
+                    <ul id="hizbSections" class="sub_sec">
+                         {{#each sections}}
+                         <li>
+         <a href="#" class="item-link" data-s="{{sura}}" data-a="{{aya}}" data-p="{{page}}">
+            <i class="icon {{type}}-icon"></i>
+                 <div class="info">
+                     <div class="title">{{text}}</div>
+                            <span>سورة {{suraTxt sura}}</span>
+                                <span>أيه {{aya}}</span>
+                              </div>
+                                <div class="pageNum">{{page}}</div>
+                            </a>
+    </li>
+                         {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/template7" id="h_section">
+     
+     </script>
+    <script type="text/template7" id="bookmarkList">
+        <li class="swipeout mark">
+            <div class="swipeout-content">
+                <a href="#" class="item-content item-link bk-link" data-index="{{index}}" data-p="{{page}}" data-s="{{sura}}" data-a="{{aya}}">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title sName">سورة {{s_name}}</div>
+                            <div class="item-after aNum"> الاية {{aya}}</div>
+                        </div>
+                        <div class="item-text pNum">{{page}} </div>
+                    </div>
+                </a>
+            </div>
+            <div class="swipeout-actions-right">
+                <a href="#" class="swipeout-delete removeBookmark" data-index="{{index}}">  حذف <i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </li>
+    </script>
+    <script type="text/template7" id="pageLayout">
+        <div class="pages navbar-fixed toolbar-fixed">
+            <div data-page="{{page_name}}" class="page {{page_class}} ">
+                {{#if navbar}}
+                <div class="navbar normal-navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel"><i class="fa fa-bars"></i></a> {{#js_compare "this.page_name != 'bookmarks'"}}
+                            <a href="#" class="link icon-only open-bookmark"><i class="fa fa-bookmark"></i></a> {{/js_compare}}
+                            <!--  <a href="#" class="link icon-only paly-sound" soura-index="{{index}}" ><i class="fa fa-play"></i></a> -->
+                        </div>
+                        <div class="center sliding">
+                            {{#if q_page}}
+                            <div class="title-navbar">
+                                {{#if S_name}} <span class="souraName">سورة {{S_name}}</span>{{/if}} {{#if juzNumber}}<small class="juzNumber">الجزء {{juzNumber}}</small>{{/if}} {{#if hizbNumber}}<small class="hizbNumber"> الحزب {{hizbNumber}}</small>{{/if}}
+                            </div>
+                            {{else}}
+                            <span>{{page_title}}</span> {{/if}}
+                        </div>
+                        <div class="right">
+                            <a href="#" class="link  icon-only back">
+                                <i class="fa fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/if}} {{#if toolbar}}
+                <div class="toolbar toolbar-bottom ">
+                    <div class="toolbar-inner">
+                        {{#if links}}
+                        <a href="#page-{{js " this.pageNum - 1 "}}" class="button button-big previousPage">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                        <div class="swiper-pageNum"> <a href="#" class="button button-big current_page">{{pageNum}}</a></div>
+                        <a href="#page-{{js " this.pageNum + 1 "}}" class="button button-big nextPage">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/if}} {{#if searchbar}}
+                <div class="toolbar toolbar-bottom search-bar">
+                    <div class="toolbar-inner searchbarbox">
+                        <form class="searchbar searchbar-{{page_name}}">
+                            <div class="searchbar-input">
+                                <input type="search" placeholder="بحث بأسماء السور ">
+                                <a href="#" class="searchbar-clear"></a>
+                            </div><a href="#" class="searchbar-cancel">إلغاء</a>
+                        </form>
+                    </div>
+                </div>
+                {{/if}}
+                <div class="page-content page-background {{#if contentClass}} {{contentClass}} {{/if}}" data-layout="{{layout}}" {{#if pageNum}} data-p="{{pageNum}}" {{/if}} {{#if souraIndex}} data-s="{{souraIndex}}" {{/if}}>
+                    {{#js_compare "this.layout == 'list'"}}
+                    <div class="list-block {{#if blockClass}} {{blockClass}} {{/if}}" {{#if customID}} id="{{customID}}" {{/if}}>
+                        <ul></ul>
+                    </div>
+                    {{else}}
+                    <div class="content-block  {{#if blockClass}} {{blockClass}} {{/if}} " {{#if customID}} id="{{customID}}" {{else}}{{#if pageNum}} id="souar-continer-{{pageNum}}" {{/if}} {{/if}}>
+                        {{#if q_page}}
+                          <div class="bgleft"></div>
+                          <div class="bgright"></div>
+                        {{/if}}
+                       {{#if swiper}}
+                        <div class="swiper-container swiper-container-{{pageNum}} ">
+                            <div class="swiper-wrapper">
+                            </div>
+                        </div>
+                        {{/if}}
+                    </div>
+                    {{/js_compare }}
+
+                    {{#if infinite}}
+                        <div class="infinite-scroll-preloader" style="display:none">
+                            <div class="preloader"></div>
+                        </div>
+                    {{/if}}
+                </div>
+
+                {{#if actionbotton}}
+                  <a href="#" class="floating-button color-green backtotop" ><i class="fa fa-chevron-up"></i></a>
+                {{/if}}
+
+            </div>
+        </div>
+    </script>
+    <script id="souratemplate" type="text/template7">
+        <div class="soura" data-Sindex="{{index}}" data-n="{{tname}}">
+            {{#if showTitle}}
+            <header>
+                <h3>سورة {{name}}</h3>
+            </header>
+            {{/if}} {{#js_compare "this.index != '1' && this.index != '9' && this.showTitle"}}
+            <div class="title-soura">﷽</div>
+            {{/js_compare}}
+            <div class="ayat" id="ayatList-{{page}}">
+            
+                {{#each ayat}}
+                 <span class="tooltip" data-i="{{id}}" data-a="{{aya}}">
+                 <b>
+                 {{text}}
+                   </b><small>&nbsp;{{js "getArabicNumbers(this.aya)"}}&nbsp;</small>
+                 </span>
+                 {{/each}}
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template7" id="swiperSlideTmp">
+        <div class="swiper-slide slide-{{pagenum}}" data-hash="slide-{{pagenum}}" data-pn="{{pagenum}}" data-s="{{soura}}" data-p="{{part}}">
+            <div class="contentblock content-{{pagenum}}"></div>
+        </div>
+    </script>
+    <script id="tooltip" type="text/template7">
+        <div class="tooltip_container_{{d_m}}">
+            <div class="tooltip_point_{{d_m}}">
+                <div class="tooltip_content">
+                    <div class="tooltip-box tools" data-s="{{s_id}}" data-a={{a_id}}>
+                        <a href="#" class="link btn-copy" copytarget="{{aya_id}}">
+                            <i class="fa fa-files-o"></i>
+                        </a>
+                        <a href="#" class="link btn-play">
+                            <i class="fa fa-play"></i>
+                        </a>
+                        <a href="#" class="link btn-bookmark">
+                            <i class="fa fa-bookmark"></i>
+                        </a>
+                        <a href="#" class="link btn-tafsir">
+                            <i class="fa fa-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="bookmarklist" type="text/template7">
+        <li class="swipeout mark">
+            <div class="swipeout-content">
+                <a href="#" class="item-content item-link bk-link" data-index="{{index}}" data-en="{{suraName}}" data-p="{{page}}" data-s="{{sura}}" data-a="{{aya}}">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title sName">سورة {{s_name}}</div>
+                            <div class="item-after aNum"> الاية {{aya}}</div>
+                        </div>
+                        <div class="item-text pNum">{{page}} </div>
+                    </div>
+                </a>
+            </div>
+            <div class="swipeout-actions-right">
+                <a href="#" class="swipeout-delete removeBookmark" data-index="{{index}}">  حذف <i class="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+        </li>
+    </script>
+    <script id="bookmarkempty" type="text/template7">
+        <div class="bookmark-empty">
+            <p>لايوجد علامات مضافه أو تم حذف جميع العلامات سابقا</p>
+        </div>
+    </script>
+    <script type="text/template7" id="tafsirtemplate">
+        <div class="popup tooltipup-tafsir">
+            <div class="view tooltipup-view">
+                <div class="pages navbar-fixed ">
+                    <div data-page="tafsir-verse " class="page with-subnavbar">
+                        <div class="navbar">
+                            <div class="navbar-inner navbar-items">
+                                <div class="left"></div>
+                                <div class="center sliding">
+                                    التفاسير
+                                </div>
+                                <div class="right">
+                                    <a href="#" class="close-popup link icon-only">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="toolbar tabbar toolbar-gold">
+                                <div class="toolbar-inner">
+                                    <a href="#tafsir1" class="tab-link active">{{tafsir_name}}</a>
+                                    <a href="#tafsir_words" class="tab-link">تفسير المفردات</a>
+                                    <a href="#tafsier_List" class="tab-link"> تفاسير إخرى</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-swipeable-wrap tfasiertabs ">
+                            <div class="tabs">
+                                <div id="tafsir1" class="page-content tab active aya_tafsir">
+                                    <div class="content-block ayaText">
+                                        {{#if title}}
+                                        <div class="basmalah"> ﷽ </div> {{/if}}
+                                        <p class="ayaBox" data-a='{{aya}}' data-s="{{soura}}">
+                                            {{ayatext}}
+                                        </p>
+                                    </div>
+                                    <div class="content-block tafsirText" id="tafsirText">
+                                        <div class="tafsirBox">
+                                            <p class="description">
+                                                {{text}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tafsir_words" class="page-content tab  tfasir_word">
+                                    <div class="content-block ayaText">
+                                        {{#if title}}
+                                        <div class="basmalah"> ﷽ </div> {{/if}}
+                                        <p class="ayaBox" data-a='{{aya}}' data-s="{{soura}}">
+                                            {{ayatext}}
+                                            </p>
+                                            </div>
+                                    <div class="list-block">
+                                    <p class="tfasier_words" id="tfasier_words">
+                                       جاري العمل عليه سيتوفر قريباً بإذن الله
+                                    </p>
+                                    </div>
+                                    </div>
+                                <div id="tafsier_List" class="page-content tab  tfasir_list">
+                                    <div class="content-block ayaText">
+                                        {{#if title}}
+                                        <div class="basmalah"> ﷽ </div> {{/if}}
+                                        <p class="ayaBox" data-a='{{aya}}' data-s="{{soura}}">
+                                            {{ayatext}}
+                                        </p>
+                                    </div>
+                                    <div class="list-block">
+                                        <ul class="tfasier_list" id="tfasier_list">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </script>
+    <script type="text/template7" id="searchtemplate">
+        <form id="searchform" class="searchForm">
+            <ul>
+                <li>
+                    <h3>البحث عن </h3>
+                    <div class="item-input">
+                        <input type="text" name="search" placeholder="كلمة البحث">
+                    </div>
+                </li>
+                <li>
+                    <h3>البحث ضمن </h3>
+                    <div class="item-input">
+                        <select name="" id="" class="select">
+                            <option value="0">كل السُور</option>
+                            <option value="1">الفاتحة</option>
+                            <option value="2">البقرة</option>
+                            <option value="3">آل عمران</option>
+                            <option value="4">النساء</option>
+                            <option value="5">المائدة</option>
+                            <option value="6">الأنعام</option>
+                            <option value="7">الأعراف</option>
+                            <option value="8">الأنفال</option>
+                            <option value="9">التوبة</option>
+                            <option value="10">يونس</option>
+                            <option value="11">هود</option>
+                            <option value="12">يوسف</option>
+                            <option value="13">الرعد</option>
+                            <option value="14">ابراهيم</option>
+                            <option value="15">الحجر</option>
+                            <option value="16">النحل</option>
+                            <option value="17">الإسراء</option>
+                            <option value="18">الكهف</option>
+                            <option value="19">مريم</option>
+                            <option value="20">طه</option>
+                            <option value="21">الأنبياء</option>
+                            <option value="22">الحج</option>
+                            <option value="23">المؤمنون</option>
+                            <option value="24">النور</option>
+                            <option value="25">الفرقان</option>
+                            <option value="26">الشعراء</option>
+                            <option value="27">النمل</option>
+                            <option value="28">القصص</option>
+                            <option value="29">العنكبوت</option>
+                            <option value="30">الروم</option>
+                            <option value="31">لقمان</option>
+                            <option value="32">السجدة</option>
+                            <option value="33">الأحزاب</option>
+                            <option value="34">سبإ</option>
+                            <option value="35">فاطر</option>
+                            <option value="36">يس</option>
+                            <option value="37">الصافات</option>
+                            <option value="38">ص</option>
+                            <option value="39">الزمر</option>
+                            <option value="40">غافر</option>
+                            <option value="41">فصلت</option>
+                            <option value="42">الشورى</option>
+                            <option value="43">الزخرف</option>
+                            <option value="44">الدخان</option>
+                            <option value="45">الجاثية</option>
+                            <option value="46">الأحقاف</option>
+                            <option value="47">محمد</option>
+                            <option value="48">الفتح</option>
+                            <option value="49">الحجرات</option>
+                            <option value="50">ق</option>
+                            <option value="51">الذاريات</option>
+                            <option value="52">الطور</option>
+                            <option value="53">النجم</option>
+                            <option value="54">القمر</option>
+                            <option value="55">الرحمن</option>
+                            <option value="56">الواقعة</option>
+                            <option value="57">الحديد</option>
+                            <option value="58">المجادلة</option>
+                            <option value="59">الحشر</option>
+                            <option value="60">الممتحنة</option>
+                            <option value="61">الصف</option>
+                            <option value="62">الجمعة</option>
+                            <option value="63">المنافقون</option>
+                            <option value="64">التغابن</option>
+                            <option value="65">الطلاق</option>
+                            <option value="66">التحريم</option>
+                            <option value="67">الملك</option>
+                            <option value="68">القلم</option>
+                            <option value="69">الحاقة</option>
+                            <option value="70">المعارج</option>
+                            <option value="71">نوح</option>
+                            <option value="72">الجن</option>
+                            <option value="73">المزمل</option>
+                            <option value="74">المدثر</option>
+                            <option value="75">القيامة</option>
+                            <option value="76">الانسان</option>
+                            <option value="77">المرسلات</option>
+                            <option value="78">النبإ</option>
+                            <option value="79">النازعات</option>
+                            <option value="80">عبس</option>
+                            <option value="81">التكوير</option>
+                            <option value="82">الإنفطار</option>
+                            <option value="83">المطففين</option>
+                            <option value="84">الإنشقاق</option>
+                            <option value="85">البروج</option>
+                            <option value="86">الطارق</option>
+                            <option value="87">الأعلى</option>
+                            <option value="88">الغاشية</option>
+                            <option value="89">الفجر</option>
+                            <option value="90">البلد</option>
+                            <option value="91">الشمس</option>
+                            <option value="92">الليل</option>
+                            <option value="93">الضحى</option>
+                            <option value="94">الشرح</option>
+                            <option value="95">التين</option>
+                            <option value="96">العلق</option>
+                            <option value="97">القدر</option>
+                            <option value="98">البينة</option>
+                            <option value="99">الزلزلة</option>
+                            <option value="100">العاديات</option>
+                            <option value="101">القارعة</option>
+                            <option value="102">التكاثر</option>
+                            <option value="103">العصر</option>
+                            <option value="104">الهمزة</option>
+                            <option value="105">الفيل</option>
+                            <option value="106">قريش</option>
+                            <option value="107">الماعون</option>
+                            <option value="108">الكوثر</option>
+                            <option value="109">الكافرون</option>
+                            <option value="110">النصر</option>
+                            <option value="111">المسد</option>
+                            <option value="112">الإخلاص</option>
+                            <option value="113">الفلق</option>
+                            <option value="114">الناس</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="search-btn button   button-fill   color-green ">بحث</a>
+                </li>
+            </ul>
+        </form>
+        <div class="result-count" style="display:none"></div>
+        <div class="search-result">
+            <ul></ul>
+        </div>
+    </script>
+    <script type="text/template7" id="searchitemstemplate">
+        <li>
+            <a href="#" class="item-link" data-s="{{s}}" data-a="{{a}}" data-p="{{p}}">
+                <div class="info">
+                    <div class="title">{{t}}</div>
+                    <span>سورة {{n}}</span>
+                    <span> السورة {{s}}</span>
+                    <span>الاية {{a}}</span>
+                </div>
+                <div class="pageNum">{{p}}</div>
+            </a>
+        </li>
+    </script>
+    <script id="tafsirlist" type="text/template7">
+        <li>
+            <a href="#" id="{{id}}" class="item-link item-content">
+                <span class="index">{{js "this.id + 1"}}</span>
+                <span class="name ">{{name}}</span>
+            </a>
+        </li>
+    </script>
+    <script id="tafsirAya" type="text/template7">
+        <p class="aya_Text">{{text}}</p>
+        <p class="aya_Tafsir">{{tafsir}}</p>
+    </script>
+    <script id="abouttemplate" type="text/template7">
+        <header>
+            <img src="img/icon-brown.png" alt="">
+        </header>
+            <p class="info">
+                المرشد هو تطبيق يشتمل على مميزات رائعة كتفسير مفردات القران الكريم بجانب التفاسير المعروفة  كم يتيح امكانية حفظ اخر اية
+                ويتيح لك نسخ الايات بلاضافة لخاصية البحث في القران
+            </p>
+        <div>
+            للمزيد من المعلومات يرجى <a href="" class="contact-link button">الاتصال بنا</a>
+        </div>
+    </script>
+    <script id="settingPage" type="text/template7">
+        <li>
+            <a href="#" class="item-link smart-select" id="reciteSelect" data-back-on-select="true" data-form-theme="brown">
+                <select name="recite" class="recite_Select">
+                    <option value="0">عبد الباسط عبد الصمد (ترتيل)</option>
+                    <option value="1">عبد الباسط عبد الصمد (تجويد)</option>
+                    <option value="2">عبد الله بن علي بصفر</option>
+                    <option value="3">عبد الرحمن السديس</option>
+                    <option value="4">أبو بكر الشاطري </option>
+                    <option value="5">أحمد بن علي العجمي</option>
+                    <option value="6"> مشاري بن راشد العفاسي</option>
+                    <option value="7">سعد الغامدي</option>
+                    <option value="8">هاني الرفاعي</option>
+                    <option value="9">محمود خليل الحصري</option>
+                    <option value="10">محمود خليل الحصري (تجويد)</option>
+                    <option value="11">علي الحذيفي</option>
+                    <option value="12">إبراهيم الأخضر</option>
+                    <option value="13">ماهر المعيقلي</option>
+                    <option value="14">محمد صديق المنشاوي</option>
+                    <option value="15">محمد صديق المنشاوي (ترتيل)</option>
+                    <option value="16">محمود الطبلاوي</option>
+                    <option value="17">محمد أيوب </option>
+                    <option value="18">محمد جبريل</option>
+                    <option value="19">مصطفى اسماعيل</option>
+                    <option value="20">سعود الشريم</option>
+                    <option value="21">صلاح بو خاطر</option>
+                    <option value="22">عبد المحسن القاسم</option>
+                    <option value="23">عبد الله عواد الجهني</option>
+                    <option value="24">صلاح البدير</option>
+                    <option value="25">عبد الله مطرود</option>
+                    <option value="26">الشيخ احمد نعينع</option>
+                    <option value="27">محمد عبدالكريم</option>
+                    <option value="28">خليفة الطنيجي</option>
+                    <option value="29">محمود علي البنا</option>
+                    <option value="30">كريم منصوري</option>
+                    <option value="31">محمود خليل الحصري (تعليم)</option>
+                    <option value="32">خالد القحطاني</option>
+                    <option value="33">ياسر الدوسري</option>
+                    <option value="34">ناصر القطامي</option>
+                    <option value="35">علي حجاج السويسي</option>
+                    <option value="36"> سهل ياسين</option>
+                    <option value="37">عزيز عليلي</option>
+                    <option value="38">ياسر سلامة</option>
+                    <option value="39">أكرم العلاقمي</option>
+                    <option value="40">علي جابر</option>
+                    <option value="41">فارس عباد</option>
+                </select>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="fa fa-microphone" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title">القارئ </div>
+                        <div class="item-after smart-select-value">خط حفص</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="item-link smart-select" id="fontsList" data-back-on-select="true" data-open-in="popup">
+                <select name="fonts">
+                    <option value="hafs" selected data-option-class="hafs"> الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ </option>
+                    <option value="noorehira" data-option-class="noorehira"> الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ </option>
+                    <option value="noorehuda" data-option-class="noorehuda"> الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ </option>
+                    <option value="saleem" data-option-class="saleem"> الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ </option>
+                    <option value="a-Regular" data-option-class="a-Regular"> الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ </option>
+                </select>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="fa fa-font" aria-hidden="true"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title">الخط </div>
+                        <div class="item-after "></div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <div class="item-content">
+                <div class="item-media">
+                    <i class="fa fa-moon-o" aria-hidden="true"></i>
+                </div>
+                <div class="item-inner">
+                    <div class="item-title">
+                        القراءة الليلية
+                    </div>
+                    <div class="item-after item-check">
+                        <div class="can-toggle can-toggle--size-small">
+                            <input id="nightCheckbox" type="checkbox" value="">
+                            <label for="nightCheckbox">
+                                <div class="can-toggle__switch" data-checked="تشغيل" data-unchecked="إيقاف"></div>
+                                <div class="can-toggle__label-text"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+         <li>
+        <a href="#" class="item-link smart-select" id="pageBorder" data-back-on-select="true">
+              <select name="borders">
+                <option value="1" selected data-option-class="b1">الشكل الاول</option>
+                <option value="2"   data-option-class="b2">الشكل الثاني</option>
+                <option value="3"  data-option-class="b3">الشكل الثالث</option>
+                <option value="4"  data-option-class="b4">الشكل الرابع</option>
+                <option value="5"  data-option-class="b5">الشكل الخامس</option>
+                <option value="6"  data-option-class="b6">الشكل السادس</option>
+                <option value="7"  data-option-class="b7">الشكل السابع</option>
+              </select>
+              <div class="item-content">
+              <div class="item-media">
+                    <i class="fa fa-square-o" aria-hidden="true"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">إطار الصفحة</div>
+                  <div class="item-after">الشكل الاول</div>
+                </div>
+              </div>
+            </a>
+        </li>
+
+
+
+        <li>
+            <a href="#" class="item-link item-content  help-link">
+                <div class="item-media">
+                    <i class="fa fa-question" aria-hidden="true"></i>
+                </div>
+                <div class="item-inner">
+                    <div class="item-title">مساعدة</div>
+                    <div class="item-after"></div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="item-link item-content about-link">
+                <div class="item-media">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                </div>
+                <div class="item-inner">
+                    <div class="item-title">عن التطبيق</div>
+                    <div class="item-after"></div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="item-link item-content  contact-link">
+                <div class="item-media">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="item-inner">
+                    <div class="item-title">الاتصال بنا</div>
+                    <div class="item-after"></div>
+                </div>
+            </a>
+        </li>
+
+
+
+    </script>
+
+    <!--   -->
+    <script id="contacttemplate" type="text/template7">
+        <header class="header-contact">
+            <h2>شكرا لاهتمامك</h2>
+            <p>الرجاء ملئ الحقول التالية بالبيانات المطلوبة وارسال ملاحظاتك لنا </p>
+        </header>
+        <form id="contactForm">
+            <div class="list-block">
+                <ul class="">
+                    <li>
+                        <div class="item-input input-name">
+                            <input type="text" name="full_name" id="full_name" class="input " placeholder="الاسم ">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-input input-email">
+                            <input type="email" name="email" class="input " placeholder="البريد الالكتروني">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-input">
+                            <textarea name="message" placeholder="نص الرساله"></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="button button-big button-fill send-message">إرسال</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </script>
+    <script id="helptemplate" type="text/template7">
+        <div class="information">
+            <div class="list-block">
+                <ul class="questionslist"></ul>
+            </div>
+        </div>
+    </script>
+    <script id="accordiontemplate" type="text/template7">
+        <li class="accordion-item">
+            <a href="#" class="item-content item-link">
+                <div class="item-inner">
+                    <div class="item-title">{{question}}</div>
+                </div>
+            </a>
+            <div class="accordion-item-content">
+                <p>{{answer}}</p>
+            </div>
+        </li>
+    </script>
+    <script id="recitationstemplate" type="text/template7">
+        <li  class="swipeout" >
+         <div class="swipeout-content">
+           <a href="#" class="item-link item-content" data-index="{{js " this.index-1 "}}" data-n="{{name}}" data-t="{{arname}}">
+                <span class="index">{{index}} </span>
+                <span class="name"> {{arname}}  </span>
+                <span class="type"> {{#if type}} {{js "typetext(this.type)"}} {{/if}}</span>
+
+        </a>
+         </div>
+          <!--#1-->
+        </li>
+    </script>
+    <!--#1 <div class="swipeout-actions-left reciteItem" data-index="{{js " this.index-1 "}}">
+   <a href="#" class="bg-orange btn-download"><i class="fa fa-download" aria-hidden="true"></i></a>
+   <a href="#" class="bg-red btn-remove"><i class="fa fa-trash" aria-hidden="true"></i></a>
+ </div> -->
+    <script id="stemplate" type="text/template7">
+
+    <li class="swipeout"  data-s="{{index}}">
+               <div class="swipeout-content item-content">
+                       <div class="index">{{index}}</div>
+                        <div class="item-info" data-s="{{index}}" data-r="{{reciter}}" data-en="{{tname}}" data-page="{{page}}" data-d={{downloaded}}>
+                            <div class="name">{{name}}</div>
+                            <div class="quantity">آياتها <strong>{{ayas}}</strong> </div>
+                            <div class="buttons-row">
+                                <a href="#" class="button btn-play"><i class="fa fa-play" aria-hidden="true"></i></a>
+                       <a href="#" class="button btn-down"><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i></a>
+                          </div>
+                    </div>
+                </div>
+         <div class="swipeout-actions-left">
+<a href="#" class="bg-red btnremove" data-s="{{index}}" data-r="{{reciter}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+        </div>
+        </li>
+
+
+    </script>
+    
+    <!-- #3   -->
+    
+    <!-- #2      <a href="#" class="button btn-down"><i class="fa fa-spinner fa-pulse fa-fw" aria-hidden="true"></i></a>  -->
+<!--      <a href="#" class="button {{#if downloaded}}downloaded {{else}} btn-download {{/if}} "><i class="fa fa-download" aria-hidden="true"></i></a>-->
+    <!--   <canvas id="my_canvas_{{index}}" width="46" height="46" class="hidden"></canvas>-->
+
+    <script id="modalPlayer" type="text/template7">
+        <div class="media-player modal-player">
+            <div class="buttons-row">
+                <a href="#" data-s="{{s}}" class="link button backward"><i class="fa fa-forward"></i></a>
+                <a href="#" data-r="{{r}}" data-s="{{s}}" data-download="{{d}}" class="link button play"><i class="fa fa-play"></i></a>
+                <a href="#" data-s="{{s}}" class="link button forward"><i class="fa fa-backward"></i></a>
+            </div>
+        </div>
+    </script>
+    <script id="navPlayer" type="text/template7">
+        <div class="media-player toolbar-player">
+            <div class="buttons-row" data-r="{{r}}" data-s="{{s}}" data-download="{{d}}">
+                <a href="#" class="link button backToPage hidden "><i class="fa fa-eject"></i></a>
+                <a href="#" class="link button backward"><i class="fa fa-forward"></i></a>
+                <a href="#" class="link button play"><i class="fa fa-play"></i></a>
+                <a href="#" class="link button stop"><i class="fa fa-stop" aria-hidden="true"></i></a>
+                <a href="#" class="link button forward"><i class="fa fa-backward"></i></a>
+            </div>
+        </div>
+    </script>
+
+
+    <script id="mediaData" type="text/template7">
+        <span class="mediaData">
+        <strong>سورة   {{name}} </strong> 
+        <small>اياتها  {{ayat}}</small> 
+        </span>
+    </script>
+   
+   
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <div id="overlay"></div>
+</body>
+</html>

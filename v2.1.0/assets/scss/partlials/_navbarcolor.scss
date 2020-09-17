@@ -1,0 +1,43 @@
+.searchbarbox{
+    form.searchbar {
+        background-color: darken($green,5%);
+        &.searchbar-active{
+            background-color: darken($green,10%);
+        }
+    }
+}
+.notFound{
+    color: red;
+}
+.navbar{
+    @include linears(45deg , $dark-green , $dark-green ,  $light-green 40 $light-green 60 );
+}
+.title-navbar{
+    small{
+        color: $gold;
+    }
+}
+.toolbar-gold{
+    // dec4a4 dfc8ac e7ddcb
+    @include linears(70deg ,$toolbar , $toolbar ,  $toolbar-center 30 $toolbar-center 70 );
+    box-shadow: 0 0 1px 0px $brown;
+    .tab-link{
+        color: darken($brown,15%);
+        &.active{
+            color: darken($brown,15%);
+        }
+        &.active-state{
+            color: $brown;
+        }
+    }
+    .tab-link-highlight{
+        background: $brown;
+    }
+    .ripple-wave {
+        background-color: rgba($gold,0.6);
+    }
+}
+.button-counter{
+    background:lighten($green,2%);
+
+}

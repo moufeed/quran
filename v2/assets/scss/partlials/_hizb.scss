@@ -1,0 +1,95 @@
+ .half-icon,
+ .quarter-icon,
+ .hizb-icon,
+ .threeQuarters-icon {
+     @include square(30px);
+     margin-left: 5px;
+     margin-right: 5px;
+     display: table;
+ }
+
+ .half-icon {
+     background-image: url('#{$base-images}/background/half.svg');
+ }
+
+ .quarter-icon {
+     background-image: url('#{$base-images}/background/quarter.svg');
+ }
+
+ .hizb-icon {
+     background-image: url('#{$base-images}/background/full.svg');
+ }
+
+ .threeQuarters-icon {
+     background-image: url('#{$base-images}/background/three.svg');
+ }
+
+ .hizb-picker {
+     height: 270px;
+     .toolbar {
+         background: $brown;
+         .left {
+             color: $gold;
+             padding-right: 15px;
+         }
+     }
+.picker-modal-inner {
+    overflow-y: auto;
+    .list-block {
+        margin: 5px 0;
+        ul {
+            &:before,
+            &:after {
+                background: transparent;
+            }
+            li {
+                a {
+                    min-height: 48px;
+                    @include makeflex(flex, row, space-between, center);
+                    .info {
+                        padding-top: 3px;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        width: calc(90% - 70px);
+                        color: darken($dark-gold, 10%);
+                        .title {
+                            font-family: "a-Bold";
+                            font-weight: 600;
+                            color: darken($brown, 10%);
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            position: relative;
+                            &:after {
+                                @include linears(left, lighten($fg, 15%), transparent, lighten($fg, 15%) 30);
+                                background-color: transparent;
+                                @include size(100%, calc(100% + 30px));
+                                @include absolute(top left, -5px);
+                                content: '';
+                                z-index: 0;
+                            }
+                        }
+                        span {
+                            font-size: 12px;
+                            margin: auto 5px;
+                        }
+                    }
+                    .pageNum {
+                        position: relative;
+                        z-index: 1;
+                        width: 10%;
+                        font-weight: bolder;
+                    }
+                    &.active-state {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+ .ripple-wave {
+         background-color: rgba($brown, .5);
+         z-index: 1500;
+ }
+ }

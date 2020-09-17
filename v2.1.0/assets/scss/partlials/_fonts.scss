@@ -1,0 +1,46 @@
+@mixin ff($fontname,$fontsource){
+    @font-face {
+    font-family: $fontname;
+    src:        url('#{$fontsource}');
+    }
+}
+@include if-ltr{
+    //app
+
+    @include ff(t-Light,'#{$base-fonts}/app/FrutigerLTArabic-45Light.ttf');
+    @include ff(t-roman,'#{$base-fonts}/app/FrutigerLTArabic-55Roman.ttf');
+    @include ff(t-bold,'#{$base-fonts}/app/FrutigerLTArabic-65Bold.ttf');
+    @include ff(t-black,'#{$base-fonts}/app/FrutigerLTArabic-75Black.ttf');
+    
+
+   // https://github.com/quran/quran_android
+
+    @include ff(noorehira,'#{$base-fonts}/quran/noorehira.ttf'); // Yes
+    //@include ff(noorehira_volt,'#{$base-fonts}/quran/noorehira_volt.ttf'); //NO
+    @include ff(noorehuda,'#{$base-fonts}/quran/noorehuda.ttf'); //yes
+   // @include ff(URDUNAS0,'#{$base-fonts}/quran/URDUNAS0.eot'); //NO
+
+    // http://fonts.qurancomplex.gov.sa/
+
+    @include ff(hafs,'#{$base-fonts}/quran/UthmanicHafs1-Ver09.otf');//YES
+//    @include ff(l-naskh,'#{$base-fonts}/quran/UthmanTN1-Ver10.otf'); // no
+//    @include ff(b-naskh,'#{$base-fonts}/quran/UthmanTN1-Ver10-bold.otf');
+
+    // http://pakdata.com/products/arabicfont
+    @include ff(saleem,'#{$base-fonts}/quran/PDMS_Saleem_QuranFont-signed.ttf');
+    
+    
+   //https://www.google.com/fonts/
+    @include ff(a-Bold,'#{$base-fonts}/amiri/Amiri-Bold.ttf');
+    @include ff(a-BoldSlanted,'#{$base-fonts}/amiri/Amiri-BoldSlanted.ttf');
+    @include ff(a-Regular,'#{$base-fonts}/amiri/Amiri-Regular.ttf');
+    @include ff(a-Slanted,'#{$base-fonts}/amiri/Amiri-Slanted.ttf');
+
+   //http://www.noorehidayat.org/
+
+
+
+} 
+@include if-rtl{
+  
+}  

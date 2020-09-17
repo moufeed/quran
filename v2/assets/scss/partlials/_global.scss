@@ -1,0 +1,228 @@
+.highlight{
+    background-color:$highlight;
+} 
+.highlight2{
+    background-color:lighten($highlight,20);
+}
+.highlight3{
+    background-color:lighten($highlight,10);
+}
+.animate{
+    display: none;
+    opacity:0;
+}
+.animated{
+       display: inherit !important;
+       opacity:1;
+       animation-duration: .33s;
+       //animation-delay: .20s;
+       animation-iteration-count: 1;
+       animation-fill-mode: both;
+} 
+
+.page-background,.page{
+    background: $background ;
+}
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+}
+.invisible {
+  visibility: hidden;
+}
+
+
+ .ripple-wave {
+    background-color: rgba($highlight,0.5);
+}
+ 
+
+.soura{
+ 
+    .title-soura{
+        margin-top: 15px;
+    }
+    .ayat{
+        margin-top: 15px;
+        text-align: justify;
+        word-spacing: 1px; 
+		b {
+			font-weight: normal;
+		}
+    }
+}
+.page-content{
+    &.goldbg{
+         background: $page  ;
+      @include linears(90deg ,darken($page,3%) , darken($page,3%), $page 20 $page 80 )
+    }
+}
+
+
+
+.font-controls{
+	text-align:center;
+	a .fa{
+		color:white;
+		font-size: 1.4em;
+	}
+
+}
+.infinite-scroll-preloader {
+  margin-top:-20px;
+  margin-bottom: 10px;
+  text-align: center;
+    .preloader {
+      width:34px;
+      height:34px;
+    }
+}
+#overlay{
+    @include absolute(top left ,0);
+    z-index: 130000;
+    background:transparent;
+    @include square(100%);
+    display: none;
+}
+.page-background{
+    .content-block{
+        margin-top:5px;
+    }
+}
+
+.swiper-button-disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+.mediaData{
+    width: 100%;
+    @include makeflex(flex,row,space-between,center);
+    strong{
+        color: $green;
+    }
+    small{
+        color: $dark-gold;
+    }
+}
+.modal-player{
+    .buttons-row{
+        .button{
+            color: #7F8A7D;
+            &.play{
+                font-size: 30px;
+                line-height: 34px;
+                 &.pause{
+                    i{
+                        &:before{
+                            content:'\f04c' 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-in{
+    .ayacount{
+        @include absolute(bottom right ,9%);
+          color: $dark-gold;
+    }
+    .downloading{
+        @include absolute(bottom right ,9%);
+    }
+}
+.toolbar-player{
+      .buttons-row{
+        .button{
+            &.play{
+                 &.pause{
+                    i{
+                        &:before{
+                            content:'\f04c'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.infinite-scroll-preloader {
+    margin-top:-20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.infinite-scroll-preloader .preloader {
+    width:34px;
+    height:34px;
+}
+.backtotop{
+    right: auto;
+    left: 16px;
+    transform: translate3d(0,100px,0);
+    @include transition(all .33s $easeOutBack);
+    &.in{
+        transform: translate3d(0,0,0);
+    }
+}
+.btn-remove{
+    &.active-state{
+        background-color: #e03a2d;
+    }
+}

@@ -1,0 +1,44 @@
+.ayat{
+    small{
+        font-family: $numberFont;
+    }
+}
+.title-soura{
+        font-family: $souarTitleFont ;
+        font-weight: bolder;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      margin-bottom: 10px;
+}
+.hide_aya{
+	display: none;
+}
+.has_words{
+	background: #e6d0b4;
+}
+.words{
+	i{
+		font-style: normal;
+	}
+}
+
+.words_popover{
+	.btn-share{
+		float: left;
+		padding: 10px 15px;
+		color: #666;
+	}
+	.content-popover{
+		padding: 5px 15px;
+		p{
+			margin: 5px 0;
+			&.aya_word{
+				font-weight: bolder;
+			font-family: hafs;
+			border-bottom: 1px solid #dcdada;
+			padding-bottom: 5px;
+			}
+		}
+	}
+}

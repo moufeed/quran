@@ -1,0 +1,150 @@
+.tfasir_list{
+      background: $background;
+      .list-block{
+        margin-top: 0;
+        .tfasier_list{
+            &:after,&:before{
+                background: transparent;
+            }
+       }
+}
+}
+.ayaBox{
+        position: relative;
+        font-family: "l-naskh";
+        text-align: center;
+        color:  darken($brown,10%);
+        font-size: 1rem;
+        margin: 0;
+        padding: 10px;
+        @include makeflex(flex,row,center,center);
+        @include flex-wrap(wrap);
+    &:after,&:before{
+        @include makeflex(flex,row,center,center);
+        @include square(30px);
+        @include absolute(left bottom,4px -10px);
+    }
+    &:after{
+        content:attr(data-a);
+        color: $bg;
+    }
+    &:before{
+         content: "۝" ;
+        font-size: 22px;
+        color: $brown;
+    }
+}
+.page {
+    .tabs {
+        .aya_tafsir,
+        .tfasir_list {
+            padding-top: 81px;
+            background:mix($fg, $background);
+            .content-block {
+                margin-top: 0;
+                &.ayaText{
+                    padding: 15px 0;
+                    margin-top: 24px;
+                    margin-bottom: 0;
+                    background: $background;
+                    border-bottom: 1px solid darken($background,15%);
+                }
+            }
+        }
+    }
+}
+.aya_tafsir{}
+.tfasir_list{}
+.basmalah{
+        position: relative;
+        font-family: "l-naskh";
+        text-align: center;
+        color:  darken($brown,13%);
+        font-size: 1rem;
+}
+
+
+
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+.ayat-list{
+    li{
+            a {
+                    min-height: 48px;
+                    @include makeflex(flex, row, space-between, center);
+                    .info {
+                        padding-top: 3px;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        width: calc(90% - 70px);
+                        color: darken($dark-gold, 10%);
+                        .title {
+                            font-family: "a-Bold";
+                            font-weight: 600;
+                            color: darken($brown, 10%);
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            position: relative;
+                            &:after {
+                                @include linears(left, lighten($toolbar ,15%), transparent, lighten($toolbar ,15%) 20);
+                                background-color: transparent;
+                                @include size(100%, calc(100% + 30px));
+                                @include absolute(top left, -5px);
+                                content: '';
+                                z-index: 0;
+                            }
+                        }
+                        span {
+                            font-size: 12px;
+                            margin: auto 5px;
+                        }
+                    }
+                    .ayaNum {
+                        position: relative;
+                        z-index: 1;
+                        width: 10%;
+                        font-weight: bolder;
+                    }
+                    &.active-state {
+                        background-color: transparent;
+                    }
+                }
+        &:nth-child(odd){
+            a{
+                .title {
+                    &:after {
+                         @include linears(left, lighten($toolbar ,10%), transparent, lighten($toolbar ,10%) 30);
+                         background-color : transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//--------------------------------------------------------
+//--------------------------------------------------------
+//--------------------------------------------------------
+.tafsir_aya_Page{
+    .content-block{
+        margin-top: 0;
+    }
+}
+.aya_Text{
+        position: relative;
+        font-family: "b-naskh";
+        text-align: center;
+        color:  darken($brown,13%);
+        font-size: 1rem;
+         background: $background;
+        border-bottom: 1px solid darken($background,15%);
+    padding: 15px 5px;
+}
+.aya_Tafsir{
+    font-family:'a-Regular' ;
+    word-spacing: 3px;
+}
+
+ 

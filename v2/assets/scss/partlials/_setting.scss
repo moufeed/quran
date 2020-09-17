@@ -1,0 +1,23 @@
+
+
+.setting_content{
+    ul{
+        li{
+            a{
+                .item-icon{
+                    width: 20%;
+                    color: lighten($brown ,35%) ;
+                    text-align: right;
+                    .fa{
+                            font-size: 30px;
+                        font-weight: 100;
+                    }
+                }
+                .item-name{
+                    color: $brown;
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

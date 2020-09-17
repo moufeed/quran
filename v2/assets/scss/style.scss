@@ -1,0 +1,140 @@
+$dir:  ltr ;
+$base-images      : "../img" ;
+$base-fonts       : "../fonts" ;
+$base-js          : "../js" ;
+$base-plugins     : "../plugins" ;
+
+
+
+$fg         :#ffffff;
+$bg         :#000000;
+$background :#fcf4e2;
+$light-green: #34662c;
+$green : #24441f; 
+$dark-green : #1d3619; 
+
+
+$night :#212121;
+$nightground :#424242;
+$nightodd: #616161; 
+$night-color :#A5D6A7;
+$night-color2 :#EEEEEE;
+
+
+$light-gold :#feca6e;
+$gold : #f8e9c6; 
+$dark-gold : #c5af7b;  
+$brown : #734825; 
+ 
+$toolbar: #dec4a4 ; //dec4a4 //
+$toolbar-center:#f1eae1;
+$page :#fefbec;
+
+$yellow :#fff200;
+
+$warning: #f39c12; 
+$primary: #3c8dbc;
+$success :#00a65a;
+$danger:#dd4b39;
+$panel : $green;
+$panelToolbar :$light-green;
+$highlight :#b8cc9c;
+$tooltipBG : $light-green;
+$tooltipH : #3c8230;
+
+//panel
+$panel-background: #212121;
+$sidebarToolbar : #1b1b1b;
+$activePanelList :#d6934e;
+
+
+ 
+
+$pLeft : 16px;
+$ayatFont : 'hafs' ;
+$souarTitleFont :'a-bold' ;
+$numberFont : 'a-regular';
+
+//-------------------------------
+ @import "mixins/config";
+ @import "font-awesome/font-awesome";
+//------------------------------
+@import "partlials/fonts"; 
+@import "partlials/themes";
+
+body{
+    font-family: 't-light';
+    background: $background;
+    transform: translate3d(0,0,0);
+    &.with-panel-right-reveal{
+        .navbar{
+            .fa-bars{
+                @include transition(all .33s);
+                @include rotate(360deg);
+                &:before{
+                    content: '\f00d';
+
+                }
+            }
+        }
+    }
+}
+*{
+       
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+         
+}
+p,h1,h2,h3,h4,h5,h6,strong,span,small,a,button,label{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    }
+
+
+
+
+        @import "partlials/global";
+        @import "partlials/list";
+        @import "partlials/tooltip";
+        @import "partlials/pagelayout";
+        @import "partlials/panel";
+        @import "partlials/tfasirlist";
+        @import "partlials/souar";
+        @import "partlials/hizb";
+        @import "partlials/bookmarks";
+        @import "partlials/search";
+        @import "partlials/searchmeanings";
+        @import "partlials/contact";
+        @import "partlials/setting";
+        @import "partlials/about";
+        @import "partlials/help";
+        @import "partlials/settings";
+        @import "partlials/navbar";
+        @import "partlials/download";
+        @import "partlials/panelcolor";
+
+
+
+//.theme-red,
+//.theme-purple,
+//.theme-deeppurple,
+//.theme-indigo,
+//.theme-blue,
+//.theme-lightblue,
+//.theme-cyan,
+//.theme-teal,
+//.theme-green,
+//.theme-lightgreen,
+//.theme-lime,
+//.theme-yellow,
+//.theme-amber,
+//.theme-orange,
+//.theme-deeporange,
+//.theme-brown,
+//.theme-gray,
+//.theme-bluegray,
+//.theme-white,
+//.theme-black{
+//    @extend .theme-app;
+//}

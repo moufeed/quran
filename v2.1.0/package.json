@@ -1,0 +1,52 @@
+{
+  "name": "almorshed",
+  "version": "1.0.0",
+  "description": "alorshed",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website",
+    "chief_tool"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://192.168.1.100:9090/moufeed/chief.git"
+  },
+  "author": "<development@das-360.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.5",
+    "cssnano": "^3.5.2",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^0.4.7",
+    "grunt-jsdoc": "^2.0.0",
+    "grunt-json-minify": "^0.4.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-svgmin": "^3.1.2",
+    "load-grunt-tasks": "^3.4.1",
+    "pixrem": "^3.0.0",
+    "time-grunt": "^1.3.0"
+  },
+  "dependencies": {
+    "cordova-android": "^6.2.3",
+    "cordova-plugin-whitelist": "1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "NetworkStatus": {},
+      "cordova-plugin-network-information": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
